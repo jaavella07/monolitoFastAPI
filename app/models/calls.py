@@ -1,17 +1,15 @@
 from sqlmodel import SQLModel, Field
 
 
-
-
 class CallsBase(SQLModel):
     type: str
-    date: str | None = None
-    transcript: str | None = None
-    recording: str | None = None
-    call_status:str | None = None
+    date: str = Field(default=None)
+    transcript: str = Field(default=None)
+    recording: str = Field(default=None)
+    call_status:str = Field(default=None)
     duration: int | None = None
-    end_call_status: str
-    summary: str
+    end_call_status: str = Field(default=None)
+    summary: str = Field(default=None)
     age: int | None = None
 
 class CallsCreate(CallsBase):
